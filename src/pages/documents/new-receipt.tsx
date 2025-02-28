@@ -10,10 +10,12 @@ type Item = {
     total: number;
 };
 
+/*
 type Receipt = {
     items: Item[];
     amount: number;
 };
+*/
 
 export default function NewReceipt() {
   const router = useRouter();
@@ -44,7 +46,7 @@ export default function NewReceipt() {
   useEffect(() => {
     async function fetchTransaction() {
       try {
-        if (!transactionId || Array.isArray(transactionId)) return; // Handle potential array type for transactionId
+        if (!transactionId || Array.isArray(transactionId)) return;
         const db = await openAccountingDB();
         const tx = db.transaction('transactions', 'readonly');
         const store = tx.objectStore('transactions');
@@ -56,13 +58,13 @@ export default function NewReceipt() {
           setReceipt({
             ...receipt,
             date: new Date(result.date).toISOString().split('T')[0],
-            amount: Number(result.amount), // Ensure amount is treated as a number
+            amount: Number(result.amount),
             description: result.description,
             items: [{ 
               description: result.description, 
-              amount: Number(result.amount), // Ensure amount is a number
+              amount: Number(result.amount),
               quantity: 1, 
-              total: Number(result.amount) // Ensure total is a number
+              total: Number(result.amount)
             }]
           });
         }
@@ -86,7 +88,7 @@ export default function NewReceipt() {
     const updatedItems = [...receipt.items];
     const indexUpdatedItems = updatedItems[index];
     if (field === 'amount' || field === 'quantity') {
-      value = value === '' ? 0 : Number(value); // Ensure values are treated as numbers
+      value = value === '' ? 0 : Number(value);
 
       indexUpdatedItems[field] = value;
   
@@ -95,7 +97,6 @@ export default function NewReceipt() {
         indexUpdatedItems.total = indexUpdatedItems.amount * indexUpdatedItems.quantity;
       }
     } else if (field === 'description') {
-        // 'description' は文字列なのでそのまま設定
         indexUpdatedItems[field] = value as string;
     }
   

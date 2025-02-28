@@ -42,7 +42,7 @@ export default function NewInvoice() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string>('');
   const [transactions, setTransactions] = useState<Transaction[]>([]); // 型を明示的に指定
-  const [clients, setClients] = useState([
+  const [clients] = useState([
     { id: '1', name: '株式会社サンプル', address: '東京都千代田区1-1-1', email: 'info@sample.co.jp' },
     { id: '2', name: 'テスト商事', address: '大阪府大阪市中央区2-2-2', email: 'contact@test.co.jp' },
   ]);
@@ -61,7 +61,7 @@ export default function NewInvoice() {
     bankInfo: '〇〇銀行 △△支店 普通 1234567 カブシキガイシャ〇〇',
   });
 
-  const [company, setCompany] = useState({
+  const [company] = useState({
     name: '株式会社〇〇',
     address: '東京都新宿区西新宿1-1-1',
     phone: '03-1234-5678',
