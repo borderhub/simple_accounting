@@ -1,13 +1,15 @@
 import type { NextConfig } from "next";
 
+const isProd = process.env.NODE_ENV === 'production';
+
 const nextConfig: NextConfig = {
   /* config options here */
-  output: 'export', // 静的エクスポート
-  basePath: '/simple_accounting', // GitHub Pagesのサブディレクトリ
-  assetPrefix: '/simple_accounting/', // 静的ファイルのパス修正
+  basePath: isProd ? '/simple_accounting' : '',
+  assetPrefix: isProd ? '/simple_accounting/' : '',
   images: {
-    unoptimized: true, // 画像最適化を無効化（GitHub Pagesでは最適化機能が動作しないため）
+    unoptimized: isProd, // GitHub Pagesでは最適化を無効化
   },
+  ...(isProd && { output: 'export' }), // 本番時のみ静的エクスポートを有効化
 };
 
 export default nextConfig;
