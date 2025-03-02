@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import Layout from '../../components/Layout';
-import { openAccountingDB } from '../../lib/indexedDB';
+import Layout from '@/components/Layout';
+import { openAccountingDB } from '@/lib/indexedDB';
 
 // 取引データの型
 interface Transaction {
