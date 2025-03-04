@@ -20,6 +20,7 @@ export default function Layout({ children }: LayoutProps) {
     { href: '/transactions', label: '仕訳入力' },
     { href: '/documents', label: '帳票作成' },
     { href: '/reports', label: '財務レポート' },
+    { href: '/data-management', label: 'データ管理' },
     { href: '/settings', label: '設定' }
   ];
   

@@ -20,6 +20,7 @@ interface AccountingDB extends DBSchema {
       amount: number;
       debitAccount: string;
       creditAccount: string;
+      memo?: string;
       createdAt: string;
     };
     indexes: { date: string; debitAccount: string; creditAccount: string };
