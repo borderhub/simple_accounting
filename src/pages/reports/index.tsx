@@ -122,22 +122,25 @@ export default function Reports() {
         netAmount: 0
       };
 
+      // 経費科目のリスト
+      const expenseAccounts = [
+        '仕入', '旅費交通費', '通信費', '消耗品費',
+        '水道光熱費', '家賃', '雑費'
+      ];
+
       filteredTransactions.forEach((tx: Transaction) => {
-        if (tx.creditAccount === '売上') {
+        // 収入の計算 - 売上科目を含む取引を収入として計算
+        if (tx.debitAccount === '売上' || tx.creditAccount === '売上') {
           calculatedSummary.totalIncome += tx.amount;
-        } else if (
-          tx.debitAccount === '仕入' || 
-          tx.debitAccount === '旅費交通費' || 
-          tx.debitAccount === '通信費' || 
-          tx.debitAccount === '消耗品費' || 
-          tx.debitAccount === '水道光熱費' || 
-          tx.debitAccount === '家賃' || 
-          tx.debitAccount === '雑費'
-        ) {
+        }
+
+        // 支出の計算 - 経費科目を含む取引を支出として計算
+        if (expenseAccounts.includes(tx.debitAccount) || expenseAccounts.includes(tx.creditAccount)) {
           calculatedSummary.totalExpense += tx.amount;
         }
       });
 
+      // 収支計算
       calculatedSummary.netAmount = calculatedSummary.totalIncome - calculatedSummary.totalExpense;
 
       // 結果を状態に設定
