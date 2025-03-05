@@ -180,7 +180,7 @@ export default function Reports() {
           <div className="bg-white p-4 rounded shadow">
             <h2 className="text-xl font-semibold mb-4">確定申告</h2>
             <p className="mb-4">確定申告に必要な情報を確認できます</p>
-            <Link href="/reports/tax-report" className="inline-block bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600">
+            <Link href="" className="inline-block bg-purple-200 text-white px-4 py-2 rounded hover:bg-purple-200">
               確定申告データを表示
             </Link>
           </div>
