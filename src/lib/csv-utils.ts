@@ -1,4 +1,3 @@
-// lib/csv-utils.ts
 import { saveAs } from 'file-saver';
 import { openAccountingDB } from '@/lib/indexedDB';
 

@@ -21,7 +21,8 @@ export default function Layout({ children }: LayoutProps) {
     { href: '/documents', label: '帳票作成' },
     { href: '/reports', label: '財務レポート' },
     { href: '/data-management', label: 'データ管理' },
-    { href: '/settings', label: '設定' }
+    // TODO: 内容決まるまで一旦非表示
+    // { href: '/settings', label: '設定' }
   ];
   
   return (

@@ -59,7 +59,7 @@ export default function Documents() {
             <div>
               <h2 className="text-xl font-semibold mb-4">過去の帳票</h2>
               <p className="mb-4">作成済みの帳票を確認・ダウンロードできます</p>
-              <Link href="/documents/history" className="inline-block bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600">
+              <Link href="" className="inline-block bg-gray-200 text-white px-4 py-2 rounded hover:bg-gray-200">
                 帳票履歴を表示
               </Link>
             </div>
