@@ -51,6 +51,7 @@ const accountMaster: Record<string, Account> = {
   '未払金': { name: '未払金', category: 'liability', isDebit: false },
   '未払費用': { name: '未払費用', category: 'liability', isDebit: false },
   '資本金': { name: '資本金', category: 'equity', isDebit: false },
+  '元入金': { name: '元入金', category: 'equity', isDebit: false },
   '利益剰余金': { name: '利益剰余金', category: 'equity', isDebit: false },
   '売上': { name: '売上', category: 'revenue', isDebit: false },
   '仕入': { name: '仕入', category: 'expense', isDebit: true },

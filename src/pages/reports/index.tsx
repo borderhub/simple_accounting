@@ -94,7 +94,8 @@ export default function Reports() {
       // レポートタイプに基づいてさらにフィルタリング
       if (formData.reportType === 'income') {
         filteredTransactions = filteredTransactions.filter((tx: Transaction) => 
-          tx.debitAccount === '売上' || tx.creditAccount === '売上'
+          tx.debitAccount === '売上' || tx.creditAccount === '売上' ||
+          tx.debitAccount === '元入金' || tx.creditAccount === '元入金'
         );
       } else if (formData.reportType === 'expense') {
         filteredTransactions = filteredTransactions.filter((tx: Transaction) => 
@@ -130,7 +131,10 @@ export default function Reports() {
 
       filteredTransactions.forEach((tx: Transaction) => {
         // 収入の計算 - 売上科目を含む取引を収入として計算
-        if (tx.debitAccount === '売上' || tx.creditAccount === '売上') {
+        if (
+          tx.debitAccount === '売上' || tx.creditAccount === '売上' ||
+          tx.debitAccount === '元入金' || tx.creditAccount === '元入金'
+        ) {
           calculatedSummary.totalIncome += tx.amount;
         }
 
