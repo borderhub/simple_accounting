@@ -27,7 +27,8 @@ export default function NewTransaction() {
 
   const accountOptions: string[] = [
     '現金', '普通預金', '売上', '売掛金', '買掛金', '仕入',
-    '旅費交通費', '通信費', '消耗品費', '水道光熱費', '家賃', '雑費'
+    '旅費交通費', '通信費', '消耗品費', '水道光熱費', '家賃', '雑費',
+    '資本金', '元入金'
   ];
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {

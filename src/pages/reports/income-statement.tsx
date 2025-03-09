@@ -102,7 +102,7 @@ export default function IncomeStatementPage() {
       });
 
       // 収益・費用のカテゴリーと科目の定義
-      const revenueAccounts = ['売上', '受取利息', 'その他収益'];
+      const revenueAccounts = ['売上', '元入金', '受取利息', 'その他収益'];
       const expenseAccounts = [
         '仕入', '旅費交通費', '通信費', '消耗品費', 
         '水道光熱費', '家賃', '雑費', '減価償却費'
